@@ -89,6 +89,9 @@
      -- LSP configuration
      'neovim/nvim-lspconfig',
 
+     -- Useless Animation
+     'eandrju/cellular-automaton.nvim',
+
      -- Statusline/Winbar
 	 {
          "SmiteshP/nvim-navic",
