@@ -123,6 +123,28 @@ require("lspconfig").eslint.setup({
     }
   }
 })
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {"E501"},
+          maxLineLength = 120
+        },
+        pylint = {
+          enabled = false
+        },
+        flake8 = {
+          enabled = true
+        },
+        jedi = {
+          environmentPath = vim.env.VIRTUAL_ENV, -- Important for virtual environments
+        },
+      },
+    },
+  },
+  root_dir = require'lspconfig/util'.root_pattern("main.py","pyproject.toml", "setup.py", ".git"),
+}
 -- Export shared settings for use in server-specific configurations
 return {
     lspconfig = lspconfig,
